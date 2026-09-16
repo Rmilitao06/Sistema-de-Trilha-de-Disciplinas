@@ -30,7 +30,7 @@ prerequisito(data_science, big_data).
 prerequisito(arquitetura_software, raciocinio_algoritmico).
 
 %---ALunos---
-%Aluno com ritmo normal
+%Aluno com ritmo normal (seguindo a grade)
 cursou(henrique, banco_de_dados).
 cursou(henrique, seguranca_da_informacao).
 cursou(henrique, experiencia_criativa).
@@ -43,10 +43,29 @@ cursou(henrique, big_data).
 cursou(henrique, programacao_logica).
 cursou(henrique, teologia).
 cursou(henrique, etica).
-%Aluno adiantado
-cursou(carolina).
-%Aluno Atrasado
-cursou(santiago).
+%Aluno adiantado (está adiante da grade)
+cursou(carolina, banco_de_dados).
+cursou(carolina, seguranca_da_informacao).
+cursou(carolina, experiencia_criativa).
+cursou(carolina, modelagem_fenomenos_fisicos).
+cursou(carolina, natureza_discreta).
+cursou(carolina, sistemas_ciberfisicos).
+cursou(carolina, filosofia).
+cursou(carolina, raciocinio_algoritmico).
+cursou(carolina, big_data).
+cursou(carolina, programacao_logica).
+cursou(carolina, teologia).
+cursou(carolina, etica).
+cursou(carolina, resolucao_problemas_grafos).
+cursou(carolina, metodos_pesquisa_cientifica).
+%Aluno atrasado (ficou para trás)
+cursou(santiago, banco_de_dados).
+cursou(santiago, seguranca_da_informacao).
+cursou(santiago, experiencia_criativa).
+cursou(santiago, filosofia).
+cursou(santiago, raciocinio_algoritmico).
+cursou(santiago, teologia).
+cursou(santiago, etica).
 
 prerequisitos_ok(Aluno, Disciplina) :-
     forall(
@@ -58,19 +77,19 @@ pode_cursar(Aluno, Disciplina) :-
     prerequisitos_ok(Aluno, Disciplina),
     \+ cursou(Aluno, Disciplina).
 
-disciplina_liberada(Aluno, Lista) :-
+disciplinas_liberadas(Aluno, Lista) :-
     findall(
         Disciplina,
-    pode_cursar(Aluno, Disciplina),
-    Lista
-).
+        pode_cursar(Aluno, Disciplina),
+        Lista
+    ).
 
-disciplina_pendentes(Aluno, Lista) :-
+disciplinas_pendentes(Aluno, Lista) :-
     findall(
         Disciplina,
         (
             disciplina(Disciplina, obrigatoria, _, _),
-            \+ cursou(Aluno, Discuplina)
+            \+ cursou(Aluno, Disciplina)
         ),
         Lista
     ).
@@ -84,4 +103,4 @@ creditos_cursados(Aluno, Total) :-
         ),
         ListaCreditos
     ),
-    sum_list(ListaCredtiso, Total).
+    sum_list(ListaCreditos, Total).
