@@ -29,8 +29,21 @@ prerequisito(data_science, big_data).
 %3o Pre Requisito
 prerequisito(arquitetura_software, raciocinio_algoritmico).
 
-%
+%---ALunos---
+%Aluno com ritmo normal
+cursou(henrique, banco_de_dados).
 cursou(henrique, seguranca_da_informacao).
+cursou(henrique, experiencia_criativa).
+cursou(henrique, modelagem_fenomenos_fisicos).
+cursou(henrique, natureza_discreta).
+cursou(henrique, sistemas_ciberfisicos).
+cursou(henrique, filosofia).
+cursou(henrique, raciocinio_algoritmico).
+cursou(henrique, big_data).
+cursou(henrique, programacao_logica).
+cursou(henrique, teologia).
+cursou(henrique, etica).
+%Aluno adiantado
 cursou(carolina).
+%Aluno Atrasado
 cursou(santiago).
-
