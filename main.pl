@@ -47,3 +47,41 @@ cursou(henrique, etica).
 cursou(carolina).
 %Aluno Atrasado
 cursou(santiago).
+
+prerequisitos_ok(Aluno, Disciplina) :-
+    forall(
+        prerequisito(Disciplina, PreReq),
+        cursou(Aluno, PreReq)
+    ).
+
+pode_cursar(Aluno, Disciplina) :-
+    prerequisitos_ok(Aluno, Disciplina),
+    \+ cursou(Aluno, Disciplina).
+
+disciplina_liberada(Aluno, Lista) :-
+    findall(
+        Disciplina,
+    pode_cursar(Aluno, Disciplina),
+    Lista
+).
+
+disciplina_pendentes(Aluno, Lista) :-
+    findall(
+        Disciplina,
+        (
+            disciplina(Disciplina, obrigatoria, _, _),
+            \+ cursou(Aluno, Discuplina)
+        ),
+        Lista
+    ).
+
+creditos_cursados(Aluno, Total) :-
+    findall(
+        Creditos,
+        (
+            cursou(Aluno, Disciplina),
+            disciplina(Disciplina, _, Creditos, _)
+        ),
+        ListaCreditos
+    ),
+    sum_list(ListaCredtiso, Total).
