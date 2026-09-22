@@ -1,7 +1,7 @@
 % ============================================================
 % CAMADA 1: BASE DE FATOS
 % ============================================================
-% --- disciplinas ---
+%---disciplinas---
 disciplina(banco_de_dados, obrigatoria, 6, 2).
 disciplina(seguranca_da_informacao, obrigatoria, 4, 2).
 disciplina(experiencia_criativa, obrigatoria, 6, 1).
@@ -14,28 +14,28 @@ disciplina(big_data, obrigatoria, 4, 4).
 disciplina(programacao_logica, obrigatoria, 4, 2).
 disciplina(teologia, obrigatoria, 2, 4).
 disciplina(etica, obrigatoria, 2, 2).
-% materias futuras
+%materias futuras
 disciplina(resolucao_problemas_grafos, obrigatoria, 6, 5).
 disciplina(metodos_pesquisa_cientifica, obrigatoria, 4, 5).
 disciplina(data_science, obrigatoria, 6, 7).
 disciplina(cloud_computing, obrigatoria, 4, 7).
 disciplina(arquitetura_software, obrigatoria, 4, 7).
-% eletivas
+%eletivas
 disciplina(game_design, eletiva, 4, 6).
 disciplina(ciencias_forenses, eletiva, 4, 3).
 disciplina(criacao_trilha_sonora_para_jogos, eletiva, 4, 6).
-% --- Pre Requisito ---
-% 1o Pre Requisito
+%---Pre Requisito---
+%1o Pre Requisito
 prerequisito(resolucao_problemas_grafos, modelagem_fenomenos_fisicos).
 prerequisito(modelagem_fenomenos_fisicos, natureza_discreta).
-% 2o Pre Requisito
+%2o Pre Requisito
 prerequisito(data_science, big_data).
 prerequisito(big_data, banco_de_dados).
 prerequisito(banco_de_dados, raciocinio_algoritmico).
-% 3o Pre Requisito
+%3o Pre Requisito
 prerequisito(arquitetura_software, raciocinio_algoritmico).
-% --- Alunos ---
-% Aluno com ritmo normal (seguindo a grade)
+%---Alunos---
+%Aluno com ritmo normal (seguindo a grade)
 cursou(henrique, banco_de_dados).
 cursou(henrique, seguranca_da_informacao).
 cursou(henrique, experiencia_criativa).
@@ -49,7 +49,7 @@ cursou(henrique, programacao_logica).
 cursou(henrique, teologia).
 cursou(henrique, etica).
 
-% Aluno adiantado (esta adiante da grade)
+%Aluno adiantado (esta adiante da grade)
 cursou(carolina, banco_de_dados).
 cursou(carolina, seguranca_da_informacao).
 cursou(carolina, experiencia_criativa).
@@ -62,11 +62,11 @@ cursou(carolina, big_data).
 cursou(carolina, programacao_logica).
 cursou(carolina, teologia).
 cursou(carolina, etica).
-% cursos avancados
+%cursos avancados
 cursou(carolina, resolucao_problemas_grafos).
 cursou(carolina, metodos_pesquisa_cientifica).
 
-% Aluno atrasado (ficou para tras)
+%Aluno atrasado (ficou para tras)
 cursou(santiago, banco_de_dados).
 cursou(santiago, seguranca_da_informacao).
 cursou(santiago, experiencia_criativa).

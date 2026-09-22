@@ -26,6 +26,21 @@ disciplinas_liberadas(Aluno, Lista) :-
         Lista
     ).
 
+disciplinas_liberadas_ordenadas(Aluno, Lista) :-
+    setof(Disciplina, pode_cursar(Aluno, Disciplina), Lista).
+
+disciplinas_pendentes_por_semestre(Aluno, Semestre, Lista) :-
+    aluno_existe(Aluno),
+    bagof(
+        Disciplina,
+        (
+            disciplina(Disciplina, obrigatoria, _, Semestre),
+            \+ cursou(Aluno, Disciplina)
+        ),
+        Lista
+    ).
+
+
 disciplinas_pendentes(Aluno, Lista) :-
     aluno_existe(Aluno),
     findall(
