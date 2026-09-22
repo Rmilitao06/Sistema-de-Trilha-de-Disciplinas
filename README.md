@@ -189,18 +189,19 @@ swipl
 
 ## 📁 Estrutura de Arquivos
 
+```
 Sistema-de-Trilha-de-Disciplinas/
 ├── src/
-│ ├── curriculum.pl `Camada 1`
-│ ├── elegibilidade.pl `Camada 2`
-│ ├── trilhas.pl `Camada 3`
-│ └── main.pl `Arquivo Principal`
+│ ├── curriculum.pl **Camada 1**
+│ ├── elegibilidade.pl Camada 2
+│ ├── trilhas.pl Camada 3
+│ └── main.pl Arquivo Principal
 ├── tests/
-│ └── consultas_teste.pl `Consultas e Testes`
+│ └── consultas_teste.pl Consultas e Testes
 ├── docs/
-│ └── decisoes.md `Decisões de Modelagem`
-└── README.md `Este Arquivo`
-
+│ └── decisoes.md Decisões de Modelagem
+└── README.md Este Arquivo
+```
 ---
 
 ## 🔍 Testes Implementados
