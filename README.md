@@ -189,7 +189,6 @@ swipl
 
 ## 📁 Estrutura de Arquivos
 
-```
 Sistema-de-Trilha-de-Disciplinas/
 ├── src/
 │ ├── curriculum.pl `Camada 1`
@@ -201,7 +200,6 @@ Sistema-de-Trilha-de-Disciplinas/
 ├── docs/
 │ └── decisoes.md `Decisões de Modelagem`
 └── README.md `Este Arquivo`
-```
 
 ---
 
